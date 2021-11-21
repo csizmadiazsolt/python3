@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import sys
+
 # While loop
 count = 0
 while count < 9:
@@ -42,8 +44,73 @@ for i in range(1,11):
         print(k, end=' ')
     print()
 
+# Break statement
+for i in range(10):
+    if i == 4:
+        break
+    print("Next number", i)
+
+# Continue statement
+for i in range(10):
+    if i == 4:
+        continue
+    print("Next number", i)
+
+# Pass statement
+for i in range(10):
+    if i == 4:
+        pass
+        print("This is a pass block")
+    print("Next number", i)
+
+# Iterator with for loop
+list1 = [1, 2, 7, 8, 11]
+it = iter(list1)
+
+for i in it:
+    print(i, end=" ")
+
+print()
+
+# Iterator with while loop
+list2 = [2, 4, 14, 16, 22]
+it = iter(list2)
+
+while True:
+    try:
+        print(next(it), end=" ")
+    except StopIteration:
+        print()
+        break
+
+# Generator
+def fibonacci(n): #generator function
+    a, b, counter = 0, 1, 0
+    while True:
+        if (counter > n): 
+            return
+        yield a
+        a, b = b, a + b
+        counter += 1
+
+f_iterator = fibonacci(10)
+
+while True:
+   try:
+      print (next(f_iterator), end=" ")
+   except StopIteration:
+      print()
+      break
+
 # Infinite loop
 var = 1
 while var == 1:
-    num = int(input("Enter a number: "))
+    try:
+        num = int(input("Enter a number: "))
+    except KeyboardInterrupt:
+        print("You've pressed something else...")
+        sys.exit()
+    except ValueError:
+        print("This is not a valid integer...")
+        sys.exit()
     print("Your number is: " + str(num))
