@@ -48,3 +48,42 @@ print("Encoded:", str2)
 print("Decoded:", str2.decode('UTF-8', 'strict'))
 
 # Some other methods
+print("str1.capitalize() :", str1.capitalize())
+
+str2 = "Zsolti's string to be encoded"
+print("str2.count('i') : ", str2.count('i'))
+print("str2.count('i', 1, 7) : ", str2.count('i', 1, 7))
+print("str2.count('i', 1, 4) : ", str2.count('i', 1, 4))
+
+print(str2.endswith('ded'))
+print(str2.endswith('ded', 20))
+print(str2.endswith('ded', 0, 20))
+
+print(str2.find('encoded'))
+print(str2.find('encoded', 10))
+print(str2.find('encoded', 10, 15))
+
+try:
+    print(str2.index('encoded', 10, 15))
+except ValueError:
+    print("substring not found")
+
+print(str1.isalnum())
+print(str2.isalnum())
+
+print(str1.isalpha())
+print(str2.isalpha())
+
+str2 = "4567"
+print(str2.isnumeric())
+
+print("Length of the string :", len(str1))
+
+str2 = "THIS IS AMAZING!"
+print("str2.lower :", str2.lower())
+
+str2 = "this is amazing!"
+print("str2.upper :", str2.upper())
+
+print(str2.split())
+print(str2.split('i', 2))
